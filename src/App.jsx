@@ -1,52 +1,19 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { AuthProvider } from "./context/AuthContext";
-import { CartProvider } from "./context/CartContext";
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Home from './pages/Home';
+// Importaremos as outras páginas aqui no futuro (Agendamento, Tratamentos, etc.)
 
-import Home from "./pages/Home";
-import Cart from "./pages/Cart";
-import ClientInfo from "./pages/ClientInfo";
-import Register from "./pages/Register";
-import Login from "./pages/Login";
-import PrivateRoute from "./components/PrivateRoute";
-import PrivateRouteAdmin from "./components/PrivateRouteAdmin";
-import "react-responsive-carousel/lib/styles/carousel.min.css";
-
-import Admin from "./pages/Admin";
-
-import { ThemeProvider } from "@material-tailwind/react";  // Import necessário
-
-export default function App() {
+function App() {
   return (
-    <ThemeProvider>  {/* Envolve tudo */}
-      <AuthProvider>
-        <CartProvider>
-          <Router>
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/cart" element={<Cart />} />
-              <Route
-                path="/checkout"
-                element={
-                  <PrivateRoute>
-                    <ClientInfo />
-                  </PrivateRoute>
-                }
-              />
-              <Route path="/register" element={<Register />} />
-              <Route path="/login" element={<Login />} />
-
-              <Route
-                path="/admin"
-                element={
-                  <PrivateRouteAdmin>
-                    <Admin />
-                  </PrivateRouteAdmin>
-                }
-              />
-            </Routes>
-          </Router>
-        </CartProvider>
-      </AuthProvider>
-    </ThemeProvider>
+    <Router>
+      {/* O Navbar pode ser adicionado aqui se for global */}
+      <Routes>
+        <Route path="/" element={<Home />} />
+        {/* As rotas para as outras páginas virão aqui */}
+      </Routes>
+      {/* O Footer pode ser adicionado aqui se for global */}
+    </Router>
   );
 }
+
+export default App;
