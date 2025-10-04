@@ -105,9 +105,10 @@ const TreatmentModal = ({ treatment, onClose }) => {
 // --- SEÇÕES DA PÁGINA ---
 const HeroSection = ({ onScrollClick }) => (
   <section className="min-h-[calc(100vh-80px)] flex items-center justify-center text-center p-6">
-    <div className="relative z-10 flex flex-col items-center">
-      {/* --- LOGO MAIOR E CENTRALIZADO --- */}
-      <img src={logo} alt="Pele Brasileira Logo" className="h-48 w-48 mx-auto mb-8 rounded-full shadow-lg" />
+    <div className="relative z-10">
+      <img src={logo} alt="Pele Brasileira Logo" className="h-32 w-32 mx-auto mb-6 rounded-full shadow-lg" />
+      <h1 className="text-5xl md:text-7xl font-extrabold text-gray-800 tracking-tight">Pele Brasileira</h1>
+      <p className="mt-4 max-w-2xl mx-auto text-lg text-gray-600">Excelência em estética clínica e nutracêuticos. Beleza, ciência e cuidado em perfeita harmonia.</p>
       <div className="mt-8 space-x-4">
         <GradientButton to="/agendamento">Agende sua Consulta</GradientButton>
         <button onClick={onScrollClick} className="font-bold text-rose-500 transition-colors hover:text-rose-700">Conheça os Tratamentos &darr;</button>
